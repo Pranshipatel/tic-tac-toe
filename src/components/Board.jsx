@@ -35,29 +35,36 @@ const Board = () => {
     setisXTurn(!isXTurn)
   }
   return (
-    <div className='board-container gap-10 flex flex-col w-[40%] h-[60%]  '>
+  <div className='w-full h-full flex items-center justify-center bg-black text-white flex-col shadow-lg glassmorphism' style={{ backdropFilter: 'blur(10px)' }}>
+     <h1 className='text-3xl font-bold mb-10'>
+      TIC TAC TOE
+     </h1>
+      <div className='board-container flex flex-col items-center justify-center gap-10 w-[50%] h-[70%] p-6 bg-teal-900 rounded-xl shadow-lg glassmorphism' style={{ backdropFilter: 'blur(10px)' }}>
       {isWinner ? (
-        <>The winner is : {isWinner}</>
-       ):(
-      <>
-      <div className="board-row flex gap-10 w-full h-1/3 ">
-        <Square onClick={()=>HandleClick(0)} value={state[0]}/>
-        <Square onClick={()=>HandleClick(1)} value={state[1]}/>
-        <Square onClick={()=>HandleClick(2)} value={state[2]}/>
-      </div>
-      <div className="board-row flex gap-10 w-full h-1/3">
-      <Square onClick={()=>HandleClick(3)} value={state[3]}/>
-      <Square onClick={()=>HandleClick(4)} value={state[4]}/>
-      <Square onClick={()=>HandleClick(5)} value={state[5]}/>
-      </div>
-      <div className="board-row flex gap-10 w-full h-1/3">
-      <Square onClick={()=>HandleClick(6)} value={state[6]}/>
-      <Square onClick={()=>HandleClick(7)} value={state[7]}/>
-      <Square onClick={()=>HandleClick(8)} value={state[8]}/>
-      </div>
-      </>)
-      }
+        <div className='text-center text-3xl font-bold '>
+          The winner is : {isWinner}
+        </div>
+      ):(
+        <>
+          <div className="board-row flex gap-10 w-full h-1/3">
+            <Square onClick={()=>HandleClick(0)} value={state[0]}/>
+            <Square onClick={()=>HandleClick(1)} value={state[1]}/>
+            <Square onClick={()=>HandleClick(2)} value={state[2]}/>
+          </div>
+          <div className="board-row flex gap-10 w-full h-1/3">
+            <Square onClick={()=>HandleClick(3)} value={state[3]}/>
+            <Square onClick={()=>HandleClick(4)} value={state[4]}/>
+            <Square onClick={()=>HandleClick(5)} value={state[5]}/>
+          </div>
+          <div className="board-row flex gap-10 w-full h-1/3">
+            <Square onClick={()=>HandleClick(6)} value={state[6]}/>
+            <Square onClick={()=>HandleClick(7)} value={state[7]}/>
+            <Square onClick={()=>HandleClick(8)} value={state[8]}/>
+          </div>
+        </>
+      )}
     </div>
+  </div>
   )
 }
 

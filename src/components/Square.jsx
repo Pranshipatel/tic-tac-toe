@@ -8,8 +8,9 @@ const Square = (props) => {
         height:"100%",
         display:"flex",
         justifyContent:"center",
-        alignItems:"center"
-        }} className='square text-2xl'>
+        alignItems:"center",
+        borderRadius:"0.375rem", // rounded-md
+        }} className='square text-4xl'>
       <h1>{props.value}</h1>
     </div>
   )
